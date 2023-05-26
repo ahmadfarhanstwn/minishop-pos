@@ -1,0 +1,1 @@
+CREATE DATABASE minishop_pos;
