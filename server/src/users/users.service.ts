@@ -10,12 +10,16 @@ export class UsersService {
         private usersRepository : Repository<Users>,
     ){}
 
-    findOne(business_id : number, user_id : number) : Promise<Users> {
-        return this.usersRepository.findOneBy({business_id, user_id})
+    async findOne(business_id : number, user_id : number) : Promise<Users> {
+        return await this.usersRepository.findOneBy({business_id, user_id})
     }
 
-    findAll(business_id : number) : Promise<Users[]> {
-        return this.usersRepository.find({where: {business_id}})
+    async findOneByUsername(business_id : number, username : string) : Promise<Users> {
+        return await this.usersRepository.findOneBy({business_id, username})
+    }
+
+    async findAll(business_id : number) : Promise<Users[]> {
+        return await this.usersRepository.find({where: {business_id}})
     }
 
     /*TODO : 
