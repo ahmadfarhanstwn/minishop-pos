@@ -3,19 +3,22 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeor
 @Entity()
 export class Business{
     @PrimaryGeneratedColumn()
-    id : number;
+    business_id : number;
 
     @Column()
-    username : string;
+    business_username : string;
 
     @Column()
-    name : string;
+    business_email : string;
+
+    @Column()
+    business_name : string;
 
     @Column({default: true})
-    is_active : boolean;
+    business_is_active : boolean;
 
     @CreateDateColumn()
-    created_at : Date;
+    business_created_at : Date;
 
     /*
         TODO : 
